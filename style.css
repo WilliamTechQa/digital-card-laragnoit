@@ -61,13 +61,13 @@ body {
     min-height: 310px;     /* Garante o tamanho mínimo do cartão */
     height: auto;          /* Permite que o cartão estique se o texto quebrar linha */
     
-    /* 3. PROPORÇÃO (Opcional, mas ajuda no design) */
+    /* 3. PROPORÇÃO */
     aspect-ratio: 1.7 / 1; /* Mantém o formato retangular de cartão de visita */
 
-    /* 4. ESPAÇAMENTO INTERNO (Crucial para o mobile) */
+    /* 4. ESPAÇAMENTO INTERNO */
     padding: 20px;
 
-    /* --- Seus estilos visuais permanecem os mesmos --- */
+    /* --- ESTILOS VISUAIS FIXOS --- */
     background-color: #f2f0e9;
     background-image: url('https://www.transparenttextures.com/patterns/felt.png');
     border-radius: 25px;
@@ -75,16 +75,14 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
-                box-shadow 0.4s ease;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-    cursor: pointer;
-}
+    
+    /* Sombra fixa e leve para não pesar no processamento do celular */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    
+    /* Removido o cursor de clique para indicar que o cartão é informativo, não um botão */
+    cursor: default; 
 
-.card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 30px 60px rgba(0,0,0,0.6);
-    z-index: 10;
+    /* A linha de transition foi removida para evitar cálculos desnecessários no navegador */
 }
 
 /* DETALHES INTERNOS DO CARTÃO */
